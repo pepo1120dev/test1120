@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 217 49 56;
+  --color-secondary: 21 128 61;
+  --color-accent: 79 70 229;
+  --color-surface: 255 255 255;
+  --color-muted: 15 23 42;
+  --color-muted-foreground: 100 116 139;
+  --color-border: 226 232 240;
+  --color-ring: 217 49 56;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+* {
+  @apply box-border;
+}
+
+body {
+  @apply bg-surface text-muted antialiased;
+}
+
+a {
+  @apply text-secondary underline-offset-4 hover:underline;
+}
+
+.card-shadow {
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.75));
+  backdrop-filter: blur(20px);
+}
+
+.badge-pill {
+  @apply rounded-full px-4 py-1 text-sm font-semibold;
+}
+
+.tabs-switch button {
+  @apply flex-1 rounded-full px-6 py-3 text-sm font-semibold transition;
+}
+
+.tabs-switch button[aria-pressed='true'] {
+  @apply bg-primary text-white shadow-soft;
+}
+
+.tabs-switch button[aria-pressed='false'] {
+  @apply bg-white text-muted-foreground hover:bg-slate-100;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
